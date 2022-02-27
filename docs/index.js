@@ -32,13 +32,18 @@ function createPost(postContent) {
     const post = document.createElement("div");
 
     post.textContent = postContent;
+    
+    let textWithHtml = post.innerHTML;
+    // post = textWithHtml;
+    
     post.setAttribute('style',"background-color:#444");
     
     post.style.color = "#fafafa";
     post.style.marginTop = "10px";
     post.style.borderRadius = "10px";
     post.style.height = "auto";
-    post.style.width = "400px";
+    post.style.width = "auto";
+    post.style.maxWidth = "800px"
     post.style.justifyContent = "center";
     post.style.textAlign = "left";
     post.style.padding = "20px";
