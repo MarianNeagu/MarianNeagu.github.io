@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Platform Or Smth</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item left-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#explore">Explore</a></li>
+          <li><a href="#notifications">Notifications</a></li>
+          <li><a href="#pofile">Profile</a></li>
+        </ul>
+      </div>
+      <div class="item header">
+        <form action="">
+          <input type="text" id="search-bar" placeholder="Search.." />
+        </form>
+      </div>
+      <i class="fa fa-bars header fa-xl" id="header-icon"></i>
+      <div class="header header-mask-up"></div>
+      <div class="header header-mask-down"></div>
+
+      <!-- MAIN CONTAINER -->
+      <div class="item main" id="main">
+        <form id="post-input-form">
+          <textarea
+            type="text"
+            id="post-input"
+            name="post-input"
+            class="post-input-field main-element"
+            placeholder="Write something.."
+          ></textarea>
+        </form>
+
+        <button
+          type="button"
+          onclick="addNewPost()"
+          class="simple-button create-post-button main-element"
+        >
+          Create post
+        </button>
+        <button
+          type="button"
+          onclick="removeAllPosts()"
+          class="simple-button remove-posts-button main-element"
+        >
+          Remove posts
+        </button>
+        <label for="sort-posts-by">
+          <select name="sort-posts-by" id="sort-posts-by">
+            <option value="oldest" selected="selected">Oldest first</option>
+            <option value="newest">Newest first</option>
+            <option value="alphabetical">Alphabetical</option>
+          </select>
+        </label>
+
+        <div id="posts-container"></div>
+      </div>
+      <!-- END OF MAIN CONTAINER -->
+
+      <div class="item right-nav">RIGHT NAV</div>
+      <div class="item footer">FOOTER</div>
+    </div>
+  </body>
+</html>
