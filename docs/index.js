@@ -4,7 +4,7 @@ let postsContentArray = [];
 
 // EVENT LISTENERES
 document.getElementById('sort-posts-by').addEventListener('change', sortPostsBy);
-document.getElementById('search-bar').addEventListener('input', searchTextInPosts)
+document.getElementById('search-bar').addEventListener('input', searchTextInPosts);
 
 
 if(localStorage.getItem("postsArrayLength") != null) {
@@ -31,11 +31,9 @@ function createPost(postContent) {
 
     const post = document.createElement("div");
 
-    post.textContent = postContent;
-    
-    let textWithHtml = post.innerHTML;
-    // post = textWithHtml;
-    
+    // post.textContent = postContent;
+    post.textContent = convertToPlain(postContent);
+
     post.setAttribute('style',"background-color:#444");
     
     post.style.color = "#fafafa";
@@ -149,6 +147,12 @@ function sortPostsBy() {
 function searchTextInPosts() {
     var searchBarInput = document.getElementById('search-bar').value.toLowerCase();
 
+    if(searchBarInput.value == "")
+    {
+        for(let i = 0; i < postsContentArray.length; i++)
+            postsArray[i].innerHTML = convertToPlain(postContent);
+    }
+
     // search the input given in posts
     // if we find a post that does not contain the input given and it is displayed => we hide it 
     // respectively, if we find a post that contain the input given and its hidden => we display it
@@ -157,7 +161,26 @@ function searchTextInPosts() {
     {
         var postContent = postsContentArray[i].toLowerCase();
         if(postContent.includes(searchBarInput))
+        {                
             postsArray[i].style.display = "block";
-        else postsArray[i].style.display = "none";
+            postsArray[i].innerHTML =  "<span style='color: red'>" + convertToPlain(postContent) + "</span>";
+        }        
+        else 
+        {
+            postsArray[i].style.display = "none";
+        }
     }
+
+}
+
+function convertToPlain(html){
+
+    // Create a new div element
+    var tempDivElement = document.createElement("div");
+
+    // Set the HTML content with the given value
+    tempDivElement.innerHTML = html;
+
+    // Retrieve the text property of the element 
+    return tempDivElement.textContent || tempDivElement.innerText || "";
 }
