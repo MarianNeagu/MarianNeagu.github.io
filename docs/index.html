@@ -58,20 +58,21 @@
           Remove posts
         </button>
         <label for="sort-posts-by">
-          <select name="sort-posts-by" id="sort-posts-by">
+          <select name="sort-posts-by" id="sort-posts-by" class="main-element">
             <option value="oldest" selected="selected">Oldest first</option>
             <option value="newest">Newest first</option>
             <option value="alphabetical">Alphabetical</option>
           </select>
         </label>
 
-        <div id="posts-container"></div>
-
         <iframe
+          class="map main-element"
           src="https://www.google.com/maps/d/embed?mid=1UDAfWF4UHp2pTKmqjXVtd7cXwtV5lLIh&ehbc=2E312F"
           width="640"
           height="480"
         ></iframe>
+
+        <div id="posts-container"></div>
       </div>
       <!-- END OF MAIN CONTAINER -->
 

@@ -223,7 +223,9 @@ body {
   color: rgb(0, 0, 0);
   padding: 7px;
   font-size: 16px;
-  float: right;
+  margin-top: 10px;
+
+  display: flex;
 
   /* float: right; */
 }
@@ -269,6 +271,14 @@ body {
 
 .remove-posts-button:active {
   background-color: #ff9898;
+}
+
+.map {
+  border-radius: 15px;
+  border: none;
+  margin-top: 10px;
+
+  display: flex;
 }
 
 @media screen and (max-width: 768px) {
